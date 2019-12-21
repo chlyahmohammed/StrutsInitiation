@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts SYSTEM "struts-2.1.dtd" >
+<struts>
+	<package name="p1" extends="struts-default">
+		<action name="add" class="com.esisa.jee.struts.actions.UserAction" method="add">
+			<result name="ok" type="chain">		
+				<param name="actionName">list</param>
+			</result>
+		</action>
+		<action name="list" class="com.esisa.jee.struts.actions.UserAction" method="list">
+			<result name="ok">
+				<!-- c'est equivalent a /WEB-INF/content/UsersListOk.jsp sans params -->
+				<param name="location">/WEB-INF/content/UsersListOk.jsp</param>
+				
+			</result>
+		</action>
+	</package>
+</struts>
